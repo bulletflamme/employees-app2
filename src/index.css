@@ -1,0 +1,130 @@
+@layer theme, base, components, utilities;
+@import "tailwindcss/theme.css" layer(theme);
+@import "tailwindcss/utilities.css" layer(utilities);
+
+:root {
+  --blue: #3d5a80;
+  --accent: #e09f3e;
+  --danger: #e53935;
+  --shadow: 0 15px 25px -8px rgba(0, 0, 0, 0.2);
+}
+
+body {
+  background: #fff;
+  color: #111;
+}
+
+.panel {
+  background: var(--blue);
+  color: #fff;
+  border-radius: 4px;
+  padding: 28px 30px;
+  margin-bottom: 36px;
+  box-shadow: var(--shadow);
+}
+
+.panel .form-control {
+  padding: 0.6rem 1rem;
+  border-radius: 4px;
+}
+
+.app-info h1 {
+  font-size: clamp(1.5rem, 4.2vw, 2.6rem);
+  margin-bottom: 0.6rem;
+}
+
+.app-info h2 {
+  font-size: clamp(1.15rem, 3vw, 1.85rem);
+  margin-bottom: 0.4rem;
+}
+
+.app-info h2:last-child {
+  margin-bottom: 0;
+}
+
+.search-panel .form-control {
+  margin-bottom: 18px;
+}
+
+.employees-list {
+  list-style: none;
+  margin: 0 0 36px;
+  padding: 0;
+  background: #fff;
+  border-radius: 4px;
+  box-shadow: var(--shadow);
+  overflow: hidden;
+}
+
+.employees-list.empty {
+  padding: 36px 24px;
+  text-align: center;
+  color: #6b7280;
+}
+
+.employee {
+  padding: 20px 24px;
+  gap: 12px;
+  font-size: 1.15rem;
+  border-bottom: 1px solid var(--blue);
+  transition: color 0.15s;
+}
+
+.employee:last-child {
+  border-bottom: 0;
+}
+
+.employee.promotion {
+  color: var(--accent);
+}
+
+.employee-name {
+  cursor: pointer;
+}
+
+.employee-name:hover {
+  opacity: 0.75;
+}
+
+.icon-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  border: 0;
+  border-radius: 2px;
+  background: #f0f0f0;
+  font-size: 1.05rem;
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s;
+}
+
+.icon-btn.cookie {
+  color: var(--accent);
+}
+
+.icon-btn.cookie.active {
+  background: var(--accent);
+  color: #fff;
+}
+
+.icon-btn.trash {
+  color: var(--danger);
+}
+
+.icon-btn.trash:hover {
+  background: var(--danger);
+  color: #fff;
+}
+
+.add-form h3 {
+  font-size: 1.75rem;
+  margin-bottom: 1.2rem;
+}
+
+.add-form .error {
+  margin: 6px 0 0;
+  font-size: 0.875rem;
+  color: #ffd0d0;
+}
